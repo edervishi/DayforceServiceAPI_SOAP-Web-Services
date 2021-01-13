@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Dayforce/Services/DayforceService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DayforceService" targetNamespace="http://Dayforce/Services/DayforceService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Dayforce/Services/DayforceService/Imports">
+      <xsd:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd0" namespace="http://Dayforce/Services/DayforceService" />
+      <xsd:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd2" namespace="http://Dayforce/Services/Data" />
+      <xsd:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Dayforce.Services.Data" />
+      <xsd:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDayforceService_GetClientSiteUri_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientSiteUri" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_GetClientSiteUri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientSiteUriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Query_InputMessage">
+    <wsdl:part name="parameters" element="tns:Query" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Query_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Execute_InputMessage">
+    <wsdl:part name="parameters" element="tns:Execute" />
+  </wsdl:message>
+  <wsdl:message name="IDayforceService_Execute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDayforceService">
+    <wsdl:operation name="GetClientSiteUri">
+      <wsdl:input wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/GetClientSiteUri" message="tns:IDayforceService_GetClientSiteUri_InputMessage" />
+      <wsdl:output wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/GetClientSiteUriResponse" message="tns:IDayforceService_GetClientSiteUri_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/Authenticate" message="tns:IDayforceService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/AuthenticateResponse" message="tns:IDayforceService_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/Logout" message="tns:IDayforceService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/LogoutResponse" message="tns:IDayforceService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <wsdl:input wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/Insert" message="tns:IDayforceService_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/InsertResponse" message="tns:IDayforceService_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/Update" message="tns:IDayforceService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/UpdateResponse" message="tns:IDayforceService_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/Delete" message="tns:IDayforceService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/DeleteResponse" message="tns:IDayforceService_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <wsdl:input wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/Query" message="tns:IDayforceService_Query_InputMessage" />
+      <wsdl:output wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/QueryResponse" message="tns:IDayforceService_Query_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Execute">
+      <wsdl:input wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/Execute" message="tns:IDayforceService_Execute_InputMessage" />
+      <wsdl:output wsaw:Action="http://Dayforce/Services/DayforceService/IDayforceService/ExecuteResponse" message="tns:IDayforceService_Execute_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="DayforceService">
+    <wsdl:port name="BasicHttpBinding_IDayforceService" binding="i0:BasicHttpBinding_IDayforceService">
+      <soap:address location="https://www.dayforcehcm.com/DataSvc/DayforceService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

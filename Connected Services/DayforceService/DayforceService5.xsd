@@ -1,0 +1,1867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://Dayforce/Services/Data" elementFormDefault="qualified" targetNamespace="http://Dayforce/Services/Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Dayforce.Services.Data" />
+  <xs:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="DFGetClientSiteUriResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceVersion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Uri" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFGetClientSiteUriResponse" nillable="true" type="tns:DFGetClientSiteUriResponse" />
+  <xs:complexType name="DFResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:DFError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DFResponseBase" nillable="true" type="tns:DFResponseBase" />
+  <xs:complexType name="DFError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DFError" nillable="true" type="tns:DFError" />
+  <xs:complexType name="DFAuthenticateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SessionTicket" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaximumQueryResults" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFAuthenticateResponse" nillable="true" type="tns:DFAuthenticateResponse" />
+  <xs:complexType name="DFRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFRequest" nillable="true" type="tns:DFRequest" />
+  <xs:complexType name="DFObject">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DFObject" nillable="true" type="tns:DFObject" />
+  <xs:complexType name="PunchResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PunchTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PunchResponse" nillable="true" type="tns:PunchResponse" />
+  <xs:complexType name="PunchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PunchTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PunchRequest" nillable="true" type="tns:PunchRequest" />
+  <xs:complexType name="GetEmployeesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmployeeNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmployeeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmploymentStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FilterHireEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FilterHireStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IncludeSubordinateObjects" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OrgUnitXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatedAfter" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ContextDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FilterTerminationEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FilterTerminationStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UpdatedEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UpdatedStartDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetEmployeesRequest" nillable="true" type="tns:GetEmployeesRequest" />
+  <xs:complexType name="GetEmployeeXRefCodesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContextDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EmploymentStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FilterHireEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FilterHireStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FilterTerminationEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FilterTerminationStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OrgUnitXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatedEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UpdatedStartDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetEmployeeXRefCodesRequest" nillable="true" type="tns:GetEmployeeXRefCodesRequest" />
+  <xs:complexType name="GetEmployeeXRefCodesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetEmployeeXRefCodesResponse" nillable="true" type="tns:GetEmployeeXRefCodesResponse" />
+  <xs:complexType name="GetEmployeesByXRefCodeRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContextDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IncludeSubordinateObjects" type="xs:boolean" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="XRefCodes" nillable="true" type="q1:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetEmployeesByXRefCodeRequest" nillable="true" type="tns:GetEmployeesByXRefCodeRequest" />
+  <xs:complexType name="Employee">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfPersonAddress" />
+          <xs:element minOccurs="0" name="AttendancePolicy" nillable="true" type="tns:AttendancePolicy" />
+          <xs:element minOccurs="0" name="Badge" nillable="true" type="tns:EmployeeBadge" />
+          <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CANTax" nillable="true" type="tns:CANTax" />
+          <xs:element minOccurs="0" name="Citizenship" nillable="true" type="tns:Citizenship" />
+          <xs:element minOccurs="0" name="ClockSupervisor" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CommonName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactInformation" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfPersonContact" />
+          <xs:element minOccurs="0" name="ContextDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Courses" nillable="true" type="tns:ArrayOfCourse" />
+          <xs:element minOccurs="0" name="Culture" nillable="true" type="tns:Culture" />
+          <xs:element minOccurs="0" name="DefaultLabor" nillable="true" type="tns:ArrayOfEmployeeDefaultLabor" />
+          <xs:element minOccurs="0" name="DirectDeposits" nillable="true" type="tns:ArrayOfDirectDeposit" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocMgmtSecurityGroups" nillable="true" type="tns:ArrayOfDocMgmtSecurityGroup" />
+          <xs:element minOccurs="0" name="EIRate" nillable="true" type="tns:EIRate" />
+          <xs:element minOccurs="0" name="EligibleForRehire" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyContacts" nillable="true" type="tns:ArrayOfEmergencyContact" />
+          <xs:element minOccurs="0" name="EmployeeGroup" nillable="true" type="tns:EmployeeGroup" />
+          <xs:element minOccurs="0" name="EmployeeManager" nillable="true" type="tns:EmployeeManager" />
+          <xs:element minOccurs="0" name="EmployeeNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmployeeOrgUnits" nillable="true" type="tns:ArrayOfEmployeeOrgUnitInfo" />
+          <xs:element minOccurs="0" name="EmployeePayAdjCodeGroups" nillable="true" type="tns:ArrayOfEmployeePayAdjCodeGroup" />
+          <xs:element minOccurs="0" name="EmployeePerformanceRatings" nillable="true" type="tns:ArrayOfEmployeePerformanceRating" />
+          <xs:element minOccurs="0" name="EmployeeProperties" nillable="true" type="tns:ArrayOfEmployeeProperty" />
+          <xs:element minOccurs="0" name="EmployeeStatus" nillable="true" type="tns:EmployeeStatus" />
+          <xs:element minOccurs="0" name="EmployeeWorkAssignment" nillable="true" type="tns:EmployeeWorkAssignment" />
+          <xs:element minOccurs="0" name="EmploymentStatus" nillable="true" type="tns:EmploymentStatus" />
+          <xs:element minOccurs="0" name="EstimatedReturnDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ExportDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FederationId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HRIncidents" nillable="true" type="tns:ArrayOfEmployeeHRIncident" />
+          <xs:element minOccurs="0" name="HealthWellness" nillable="true" type="tns:EmployeeHealthWellness" />
+          <xs:element minOccurs="0" name="HireDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HomeOrganization" nillable="true" type="tns:OrgUnit" />
+          <xs:element minOccurs="0" name="IsAboriginal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsVisibleMinority" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedTimestamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastPayrollNewHireExportDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LoginId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="tns:EmployeeMaritalStatus" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OriginalHireDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PayClass" nillable="true" type="tns:PayClass" />
+          <xs:element minOccurs="0" name="PayGroup" nillable="true" type="tns:PayGroup" />
+          <xs:element minOccurs="0" name="PayrollKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PreStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfRole" />
+          <xs:element minOccurs="0" name="SSNExpiryDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SchoolYearXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SeniorityDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Skills" nillable="true" type="tns:ArrayOfSkill" />
+          <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrainingPrograms" nillable="true" type="tns:ArrayOfTrainingProgram" />
+          <xs:element minOccurs="0" name="USConfidentialInformation" nillable="true" type="tns:USConfidentialInformation" />
+          <xs:element minOccurs="0" name="USTax" nillable="true" type="tns:USTax" />
+          <xs:element minOccurs="0" name="UnionMemberships" nillable="true" type="tns:ArrayOfUnionMembership" />
+          <xs:element minOccurs="0" name="UserOrgs" nillable="true" type="tns:ArrayOfUserOrg" />
+          <xs:element minOccurs="0" name="UserPayAdjCodeGroups" nillable="true" type="tns:ArrayOfUserPayAdjCodeGroup" />
+          <xs:element minOccurs="0" name="WorkContracts" nillable="true" type="tns:ArrayOfWorkContract" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmploymentType" nillable="true" type="tns:EmploymentType" />
+          <xs:element minOccurs="0" name="RegisteredDisabled" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VeteranSeparationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AvatarUri" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BioExempt" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="COBRANotificationSentDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateOfDeath" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaidenName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewHireApprovalDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NewHireApproved" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NewHireApprovedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PPACAOverrideDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PreferredLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequiresExitInterview" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SSNCountryCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+  <xs:complexType name="ArrayOfPersonAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonAddress" nillable="true" type="tns:PersonAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonAddress" nillable="true" type="tns:ArrayOfPersonAddress" />
+  <xs:complexType name="PersonAddress">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactInformationTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryFIPSCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonAddress" nillable="true" type="tns:PersonAddress" />
+  <xs:complexType name="AttendancePolicy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrackingBasedOn" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttendancePolicy" nillable="true" type="tns:AttendancePolicy" />
+  <xs:complexType name="EmployeeBadge">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BadgeNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeBadge" nillable="true" type="tns:EmployeeBadge" />
+  <xs:complexType name="CANTax">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CANFederal" nillable="true" type="tns:CANFederalTax" />
+          <xs:element minOccurs="0" name="CANProvincial" nillable="true" type="tns:ArrayOfCANProvincialTax" />
+          <xs:element minOccurs="0" name="CANTaxStatus" nillable="true" type="tns:ArrayOfCANTaxStatus" />
+          <xs:element minOccurs="0" name="CANTaxInfo" nillable="true" type="tns:CANTaxInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CANTax" nillable="true" type="tns:CANTax" />
+  <xs:complexType name="CANFederalTax">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AuthorizedTaxCredits" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DistrictTaxDeduction" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EstimatedExpense" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EstimatedRemuneration" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IncomeLessThanClaim" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsNonResident" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MultipleEmployer" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TotalClaimAmount" nillable="true" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CANFederalTax" nillable="true" type="tns:CANFederalTax" />
+  <xs:complexType name="ArrayOfCANProvincialTax">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CANProvincialTax" nillable="true" type="tns:CANProvincialTax" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCANProvincialTax" nillable="true" type="tns:ArrayOfCANProvincialTax" />
+  <xs:complexType name="CANProvincialTax">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HasQuebecHealthContributionExemption" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LabourSponsoredFunds" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ProvinceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalClaimAmount" nillable="true" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CANProvincialTax" nillable="true" type="tns:CANProvincialTax" />
+  <xs:complexType name="ArrayOfCANTaxStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CANTaxStatus" nillable="true" type="tns:CANTaxStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCANTaxStatus" nillable="true" type="tns:ArrayOfCANTaxStatus" />
+  <xs:complexType name="CANTaxStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProvinceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaxProperty" nillable="true" type="tns:ArrayOfTaxProperty" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CANTaxStatus" nillable="true" type="tns:CANTaxStatus" />
+  <xs:complexType name="ArrayOfTaxProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxProperty" nillable="true" type="tns:TaxProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaxProperty" nillable="true" type="tns:ArrayOfTaxProperty" />
+  <xs:complexType name="TaxProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PropertyCodeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PropertyValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaxProperty" nillable="true" type="tns:TaxProperty" />
+  <xs:complexType name="CANTaxInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FederalNetClaim" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FederalTaxMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProvincialNetClaim" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ProvincialTaxMethod" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CANTaxInfo" nillable="true" type="tns:CANTaxInfo" />
+  <xs:complexType name="Citizenship">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Citizenship" nillable="true" type="tns:Citizenship" />
+  <xs:complexType name="ArrayOfPersonContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonContact" nillable="true" type="tns:PersonContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonContact" nillable="true" type="tns:ArrayOfPersonContact" />
+  <xs:complexType name="PersonContact">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactInformationTypeGroupXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactInformationTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ElectronicAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsForSystemCommunications" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsUnlistedNumber" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsVerified" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedTimestamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsPersonal" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonContact" nillable="true" type="tns:PersonContact" />
+  <xs:complexType name="ArrayOfCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Course" nillable="true" type="tns:Course" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCourse" nillable="true" type="tns:ArrayOfCourse" />
+  <xs:complexType name="Course">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CertificationExpiryDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CertificationNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompletionDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CourseXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PassFail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Score" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TrainingProgramXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Course" nillable="true" type="tns:Course" />
+  <xs:complexType name="Culture">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Culture" nillable="true" type="tns:Culture" />
+  <xs:complexType name="ArrayOfEmployeeDefaultLabor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeDefaultLabor" nillable="true" type="tns:EmployeeDefaultLabor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeDefaultLabor" nillable="true" type="tns:ArrayOfEmployeeDefaultLabor" />
+  <xs:complexType name="EmployeeDefaultLabor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeptXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocketXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="JobXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayAdjXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeDefaultLabor" nillable="true" type="tns:EmployeeDefaultLabor" />
+  <xs:complexType name="ArrayOfDirectDeposit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DirectDeposit" nillable="true" type="tns:DirectDeposit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDirectDeposit" nillable="true" type="tns:ArrayOfDirectDeposit" />
+  <xs:complexType name="DirectDeposit">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BankNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DepositNumber" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DepositValue" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FinancialInstitutionXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOneTimeException" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPercentage" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRemainder" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NumberOfPreNoteDays" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayCardType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayMethodXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequiresPreNote" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RoutingTransitNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DirectDeposit" nillable="true" type="tns:DirectDeposit" />
+  <xs:complexType name="ArrayOfDocMgmtSecurityGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocMgmtSecurityGroup" nillable="true" type="tns:DocMgmtSecurityGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocMgmtSecurityGroup" nillable="true" type="tns:ArrayOfDocMgmtSecurityGroup" />
+  <xs:complexType name="DocMgmtSecurityGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocMgmtSecurityGroup" nillable="true" type="tns:DocMgmtSecurityGroup" />
+  <xs:complexType name="EIRate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FederalEIRate" nillable="true" type="tns:EIRateInfo" />
+          <xs:element minOccurs="0" name="QuebecEIRate" nillable="true" type="tns:EIRateInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EIRate" nillable="true" type="tns:EIRate" />
+  <xs:complexType name="EIRateInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LegalEntityXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RateGroup" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EIRateInfo" nillable="true" type="tns:EIRateInfo" />
+  <xs:complexType name="ArrayOfEmergencyContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmergencyContact" nillable="true" type="tns:EmergencyContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmergencyContact" nillable="true" type="tns:ArrayOfEmergencyContact" />
+  <xs:complexType name="EmergencyContact">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyBusinessPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyCellPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyContactAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyContactAddressLine2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyContactAddressLine3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyContactCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyContactCountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyContactPostalZip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyContactStateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPrimary" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelationshipTypeXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmergencyContact" nillable="true" type="tns:EmergencyContact" />
+  <xs:complexType name="EmployeeGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeGroup" nillable="true" type="tns:EmployeeGroup" />
+  <xs:complexType name="EmployeeManager">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EmployeeNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeManager" nillable="true" type="tns:EmployeeManager" />
+  <xs:complexType name="ArrayOfEmployeeOrgUnitInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeOrgUnitInfo" nillable="true" type="tns:EmployeeOrgUnitInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeOrgUnitInfo" nillable="true" type="tns:ArrayOfEmployeeOrgUnitInfo" />
+  <xs:complexType name="EmployeeOrgUnitInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChildSortOrder" type="xs:int" />
+          <xs:element minOccurs="0" name="Department" nillable="true" type="tns:Department" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsPhysicalLocation" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPrimary" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LedgerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgLevelXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentSortOrder" type="xs:int" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeOrgUnitInfo" nillable="true" type="tns:EmployeeOrgUnitInfo" />
+  <xs:complexType name="Department">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Department" nillable="true" type="tns:Department" />
+  <xs:complexType name="ArrayOfEmployeePayAdjCodeGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeePayAdjCodeGroup" nillable="true" type="tns:EmployeePayAdjCodeGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeePayAdjCodeGroup" nillable="true" type="tns:ArrayOfEmployeePayAdjCodeGroup" />
+  <xs:complexType name="EmployeePayAdjCodeGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeePayAdjCodeGroup" nillable="true" type="tns:EmployeePayAdjCodeGroup" />
+  <xs:complexType name="ArrayOfEmployeePerformanceRating">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeePerformanceRating" nillable="true" type="tns:EmployeePerformanceRating" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeePerformanceRating" nillable="true" type="tns:ArrayOfEmployeePerformanceRating" />
+  <xs:complexType name="EmployeePerformanceRating">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CycleXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NextReviewDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RatingLongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RatingName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RatingScore" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RatingXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReviewDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReviewerEmployeeXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeePerformanceRating" nillable="true" type="tns:EmployeePerformanceRating" />
+  <xs:complexType name="ArrayOfEmployeeProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeProperty" nillable="true" type="tns:EmployeeProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeProperty" nillable="true" type="tns:ArrayOfEmployeeProperty" />
+  <xs:complexType name="EmployeeProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BitValue" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateTimeValue" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EmployeeCardinality" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsEditable" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NumberValue" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="OptionName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OptionValue" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeProperty" nillable="true" type="tns:EmployeeProperty" />
+  <xs:complexType name="EmployeeStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlternateRate" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AverageDailyHours" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AverageOvertimeRate" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BaseRate" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BaseSalary" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EntitlementPolicyXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobStepPolicyXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastPayEditDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NormalSemiMonthlyHoursBottom" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NormalSemiMonthlyHoursTop" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NormalWeeklyHours" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="OvertimeGroupXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayHolidayGroupXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayPolicyXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayStatusXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayrollPolicyXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PunchPolicyXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScheduleRulePolicyXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShiftRotationDayXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShiftRotationStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ShiftRotationXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShiftTradePolicyXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TimeOffPolicyXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VacationRate" nillable="true" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeStatus" nillable="true" type="tns:EmployeeStatus" />
+  <xs:complexType name="EmployeeWorkAssignment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeptXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EmploymentIndicatorXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FTE" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsPrimary" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PositionTermXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TipTypeGroupXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsVirtual" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Job" nillable="true" type="tns:Job" />
+          <xs:element minOccurs="0" name="WorkLocationOverride" nillable="true" type="tns:WorkLocationOverride" />
+          <xs:element minOccurs="0" name="BusinessTitle" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeWorkAssignment" nillable="true" type="tns:EmployeeWorkAssignment" />
+  <xs:complexType name="Job">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EEO" nillable="true" type="tns:EmployeeEEO" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FLSAStatus" nillable="true" type="tns:FLSAStatus" />
+          <xs:element minOccurs="0" name="IsUnionJob" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobClassification" nillable="true" type="tns:JobClassification" />
+          <xs:element minOccurs="0" name="JobFamily" nillable="true" type="tns:JobFamily" />
+          <xs:element minOccurs="0" name="JobFunction" nillable="true" type="tns:JobFunction" />
+          <xs:element minOccurs="0" name="JobQualifications" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobRank" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="JobUDFString1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobUDFString2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobUDFString3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LedgerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NOC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayGrade" nillable="true" type="tns:PayGrade" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Union" nillable="true" type="tns:Union" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Job" nillable="true" type="tns:Job" />
+  <xs:complexType name="EmployeeEEO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeEEO" nillable="true" type="tns:EmployeeEEO" />
+  <xs:complexType name="FLSAStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FLSAStatus" nillable="true" type="tns:FLSAStatus" />
+  <xs:complexType name="JobClassification">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobClassification" nillable="true" type="tns:JobClassification" />
+  <xs:complexType name="JobFamily">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobFamily" nillable="true" type="tns:JobFamily" />
+  <xs:complexType name="JobFunction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Level" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsableForExternalPosting" type="xs:boolean" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobFunction" nillable="true" type="tns:JobFunction" />
+  <xs:complexType name="PayGrade">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ControlRate" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ControlSalary" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaximumRate" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaximumSalary" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MinimumRate" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MinimumSalary" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PayTypeGroup" nillable="true" type="tns:PayTypeGroup" />
+          <xs:element minOccurs="0" name="RateMidPoint" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RestrictOutOfGrade" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SalaryMidPoint" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayGrade" nillable="true" type="tns:PayGrade" />
+  <xs:complexType name="PayTypeGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayTypeGroup" nillable="true" type="tns:PayTypeGroup" />
+  <xs:complexType name="Union">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Union" nillable="true" type="tns:Union" />
+  <xs:complexType name="WorkLocationOverride">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AllowLegalEntityOverride" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkLocationOverride" nillable="true" type="tns:WorkLocationOverride" />
+  <xs:complexType name="EmploymentStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveStartingPoint" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EmploymentStatusGroupXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsBenefitArrearsEnabled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmploymentStatus" nillable="true" type="tns:EmploymentStatus" />
+  <xs:complexType name="ArrayOfEmployeeHRIncident">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeHRIncident" nillable="true" type="tns:EmployeeHRIncident" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeHRIncident" nillable="true" type="tns:ArrayOfEmployeeHRIncident" />
+  <xs:complexType name="EmployeeHRIncident">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssignedToUserXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClosedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HRIncidentActionXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HRIncidentState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HRIncidentTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OSHA" nillable="true" type="tns:OSHA" />
+          <xs:element minOccurs="0" name="OpenDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OrgUnitXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReportByXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WCBCaseNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeHRIncident" nillable="true" type="tns:EmployeeHRIncident" />
+  <xs:complexType name="OSHA">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CausedAction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CausedObject" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateDied" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateReturnToWork" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DaysLost" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DaysRestricted" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Died" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DoctorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencyRoom" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HRIncidentArea" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HRIncidentBeganWork" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HRIncidentBodyPartXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HRIncidentDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HRIncidentEventTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HRIncidentInjuryXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Hospital" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HospitalCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HospitalOvernight" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HospitalStateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HospitalStreet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HospitalZip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsDaysLost" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PrivacyCase" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="QuestionableClaim" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SafetyHealthTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskBeingPerformed" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OSHA" nillable="true" type="tns:OSHA" />
+  <xs:complexType name="EmployeeHealthWellness">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateLastSmoked" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TobaccoUser" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeHealthWellness" nillable="true" type="tns:EmployeeHealthWellness" />
+  <xs:complexType name="OrgUnit">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClockTransferCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryFIPSCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsStoreFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LedgerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OrgUnit" nillable="true" type="tns:OrgUnit" />
+  <xs:complexType name="EmployeeMaritalStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeMaritalStatus" nillable="true" type="tns:EmployeeMaritalStatus" />
+  <xs:complexType name="PayClass">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultNormalWeeklyHours" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LedgerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortOrder" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayClass" nillable="true" type="tns:PayClass" />
+  <xs:complexType name="PayGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowDistributeByPct" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowFutureDatedImport" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ApproveByOffset" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ApproveByTimeOfDay" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AutoLockOffset" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="BPSEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BPSStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CalculationFrequencyId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CanDelete" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CommitByTimeOfDay" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreditJournalNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataGateDuration" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataGateOffsetHours" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DefaultPayPeriodHours" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DirectDepositJournalNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisableMultiJTaxn" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EarningStatementDetailLevel" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EmployeeNetPayWarning" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ExcludeFromPayroll" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FixPayDate1" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FixPayDate2" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ForceMyPayEarningReplace" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FuturePeriods" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="HoursDisplayPrecisionInStatements" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IPSEnabled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IgnorePastIssues" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsAutoUpdateImportedPayEntryEarningRateAmount" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGLAccrual" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLargePayGroup" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsNotDisbursePrintToBackOffice" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPayrollAdjustWFMHours" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPayrollByPrimaryLegalEntity" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPayrollCommit" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsProcessPayrollEntitlement" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsWFMCommitOnPayrollLock" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaxNumAccounts" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MaximumDetailRecordsInTimeData" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NetCheckJournalNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PRPrintLocalizationPolicyId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ParticipateInBPS" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PayArrears" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PayByDateType" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayDateAdjustTypeShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayDateAdjustTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayDatePayPeriodOffset" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayFrequency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayFrequencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayFrequencyType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayGroupIdentifier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayImpoundDaysOffest" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayRunDateOffset" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayStartRef" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PayrollCommitOnlineReportGenerationDelay" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayrollCommitStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PayrollCutoverDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PayrollDepositOffset" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayrollFrequency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayrollNumLoadedPeriods" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayrollServiceIdentifier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrintedAdvices" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RespectEmployeeLevelMultiJ" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SalariedEarningVariationPercent" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SendAllExportDefinitions" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SendTestFilesToPayroll" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="StartOfWeek" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SupervisorOffset" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SupressTrivialTaxLocationMessages" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SyncExportXML" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TotalNetPayVariationLimit" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalPayrollWarning" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TransmitByOffset" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TransmitByTimeOfDay" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TransmitWithIssues" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TransmitWithUnauthorizedRecords" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UnlockOffset" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayGroup" nillable="true" type="tns:PayGroup" />
+  <xs:complexType name="ArrayOfRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSystemRole" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RoleXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="ArrayOfSkill">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Skill" nillable="true" type="tns:Skill" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSkill" nillable="true" type="tns:ArrayOfSkill" />
+  <xs:complexType name="Skill">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SkillLevelXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SkillXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Skill" nillable="true" type="tns:Skill" />
+  <xs:complexType name="ArrayOfTrainingProgram">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrainingProgram" nillable="true" type="tns:TrainingProgram" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrainingProgram" nillable="true" type="tns:ArrayOfTrainingProgram" />
+  <xs:complexType name="TrainingProgram">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EnrollmentDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TrainingProgramXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrainingProgram" nillable="true" type="tns:TrainingProgram" />
+  <xs:complexType name="USConfidentialInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ethnicity" nillable="true" type="tns:EmployeeEthnicity" />
+          <xs:element minOccurs="0" name="RegisteredDisabled" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VeteranSeparationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="VeteranStatus" nillable="true" type="tns:VeteranStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="USConfidentialInformation" nillable="true" type="tns:USConfidentialInformation" />
+  <xs:complexType name="EmployeeEthnicity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ManagerDFEthnicityXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeEthnicity" nillable="true" type="tns:EmployeeEthnicity" />
+  <xs:complexType name="VeteranStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VETS100" type="xs:boolean" />
+          <xs:element minOccurs="0" name="VETS100A" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VeteranStatus" nillable="true" type="tns:VeteranStatus" />
+  <xs:complexType name="USTax">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="USFederal" nillable="true" type="tns:USFederalTax" />
+          <xs:element minOccurs="0" name="USState" nillable="true" type="tns:ArrayOfUSStateTax" />
+          <xs:element minOccurs="0" name="USTaxStatus" nillable="true" type="tns:ArrayOfUSTaxStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="USTax" nillable="true" type="tns:USTax" />
+  <xs:complexType name="USFederalTax">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Allowances" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="Deductions" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DependentTaxCredit" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FederalFilingStatusCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTaxExempt" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OtherIncome" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TwoJobs" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="USFederalTax" nillable="true" type="tns:USFederalTax" />
+  <xs:complexType name="ArrayOfUSStateTax">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USStateTax" nillable="true" type="tns:USStateTax" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSStateTax" nillable="true" type="tns:ArrayOfUSStateTax" />
+  <xs:complexType name="USStateTax">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalTaxAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AlternateCalculationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DependentAllowances" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ExemptionAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTaxExempt" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NumberOfAllowances" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="PersonalAllowances" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateFilingStatusCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="USStateTax" nillable="true" type="tns:USStateTax" />
+  <xs:complexType name="ArrayOfUSTaxStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USTaxStatus" nillable="true" type="tns:USTaxStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSTaxStatus" nillable="true" type="tns:ArrayOfUSTaxStatus" />
+  <xs:complexType name="USTaxStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaxProperty" nillable="true" type="tns:ArrayOfTaxProperty" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="USTaxStatus" nillable="true" type="tns:USTaxStatus" />
+  <xs:complexType name="ArrayOfUnionMembership">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnionMembership" nillable="true" type="tns:UnionMembership" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnionMembership" nillable="true" type="tns:ArrayOfUnionMembership" />
+  <xs:complexType name="UnionMembership">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UnionMembershipDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UnionXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnionMembership" nillable="true" type="tns:UnionMembership" />
+  <xs:complexType name="ArrayOfUserOrg">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserOrg" nillable="true" type="tns:UserOrg" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserOrg" nillable="true" type="tns:ArrayOfUserOrg" />
+  <xs:complexType name="UserOrg">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthorityTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OrgXRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserOrg" nillable="true" type="tns:UserOrg" />
+  <xs:complexType name="ArrayOfUserPayAdjCodeGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserPayAdjCodeGroup" nillable="true" type="tns:UserPayAdjCodeGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserPayAdjCodeGroup" nillable="true" type="tns:ArrayOfUserPayAdjCodeGroup" />
+  <xs:complexType name="UserPayAdjCodeGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserPayAdjCodeGroup" nillable="true" type="tns:UserPayAdjCodeGroup" />
+  <xs:complexType name="ArrayOfWorkContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkContract" nillable="true" type="tns:WorkContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkContract" nillable="true" type="tns:ArrayOfWorkContract" />
+  <xs:complexType name="WorkContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaseHours" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ContractXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreateShiftOnHolidays" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorkPatternLengthDays" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkPatterns" nillable="true" type="tns:ArrayOfWorkPattern" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkContract" nillable="true" type="tns:WorkContract" />
+  <xs:complexType name="ArrayOfWorkPattern">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkPattern" nillable="true" type="tns:WorkPattern" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkPattern" nillable="true" type="tns:ArrayOfWorkPattern" />
+  <xs:complexType name="WorkPattern">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeptXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NetHours" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="OrgTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShiftTimeBegin" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ShiftTimeEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ShiftTypeXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkPatternDayIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkPattern" nillable="true" type="tns:WorkPattern" />
+  <xs:complexType name="EmploymentType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveEnd" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LongName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmploymentType" nillable="true" type="tns:EmploymentType" />
+  <xs:complexType name="EmployeeMinimumWageChange">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeMinimumWageChange" nillable="true" type="tns:EmployeeMinimumWageChange" />
+  <xs:complexType name="GetReportDefinitionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetReportDefinitionsRequest" nillable="true" type="tns:GetReportDefinitionsRequest" />
+  <xs:complexType name="GetReportRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfReportParameter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetReportRequest" nillable="true" type="tns:GetReportRequest" />
+  <xs:complexType name="ArrayOfReportParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportParameter" nillable="true" type="tns:ReportParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportParameter" nillable="true" type="tns:ArrayOfReportParameter" />
+  <xs:complexType name="ReportParameter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UniqueId" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportParameter" nillable="true" type="tns:ReportParameter" />
+  <xs:complexType name="OpenReportPagesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfReportParameter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OpenReportPagesRequest" nillable="true" type="tns:OpenReportPagesRequest" />
+  <xs:complexType name="OpenReportPagesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageCount" type="xs:int" />
+          <xs:element minOccurs="0" name="ReportId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RowCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OpenReportPagesResponse" nillable="true" type="tns:OpenReportPagesResponse" />
+  <xs:complexType name="GetReportPageRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ReportId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetReportPageRequest" nillable="true" type="tns:GetReportPageRequest" />
+  <xs:complexType name="CloseReportPagesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReportId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CloseReportPagesRequest" nillable="true" type="tns:CloseReportPagesRequest" />
+  <xs:complexType name="CloseReportPagesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CloseReportPagesResponse" nillable="true" type="tns:CloseReportPagesResponse" />
+  <xs:complexType name="ReportDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MaxRows" type="xs:int" />
+          <xs:element minOccurs="0" name="ReportDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfReportParameterDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportDefinition" nillable="true" type="tns:ReportDefinition" />
+  <xs:complexType name="ArrayOfReportParameterDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportParameterDefinition" nillable="true" type="tns:ReportParameterDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportParameterDefinition" nillable="true" type="tns:ArrayOfReportParameterDefinition" />
+  <xs:complexType name="ReportParameterDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AvailableValues" nillable="true" type="tns:ArrayOfListValue" />
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Operator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UniqueId" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportParameterDefinition" nillable="true" type="tns:ReportParameterDefinition" />
+  <xs:complexType name="ArrayOfListValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListValue" nillable="true" type="tns:ListValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListValue" nillable="true" type="tns:ArrayOfListValue" />
+  <xs:complexType name="ListValue">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListValue" nillable="true" type="tns:ListValue" />
+  <xs:complexType name="Report">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColumnDefinitions" nillable="true" type="tns:ArrayOfReportColumnDefinition" />
+          <xs:element minOccurs="0" name="Rows" nillable="true" type="tns:ArrayOfReportRow" />
+          <xs:element minOccurs="0" name="XRefCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+  <xs:complexType name="ArrayOfReportColumnDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportColumnDefinition" nillable="true" type="tns:ReportColumnDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportColumnDefinition" nillable="true" type="tns:ArrayOfReportColumnDefinition" />
+  <xs:complexType name="ReportColumnDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Index" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportColumnDefinition" nillable="true" type="tns:ReportColumnDefinition" />
+  <xs:complexType name="ArrayOfReportRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportRow" nillable="true" type="tns:ReportRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportRow" nillable="true" type="tns:ArrayOfReportRow" />
+  <xs:complexType name="ReportRow">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ColumnValues" nillable="true" type="q2:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportRow" nillable="true" type="tns:ReportRow" />
+  <xs:complexType name="WorkflowValidationDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ActionXRefCodes" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element minOccurs="0" name="IsCanceled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TransactionTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ValidationId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowDocumentXml" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowValidationDetail" nillable="true" type="tns:WorkflowValidationDetail" />
+  <xs:complexType name="GetWorkflowValidationDetailRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ValidationId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetWorkflowValidationDetailRequest" nillable="true" type="tns:GetWorkflowValidationDetailRequest" />
+  <xs:complexType name="GetWorkflowValidationDetailResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WorkflowValidationDetail" nillable="true" type="tns:WorkflowValidationDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetWorkflowValidationDetailResponse" nillable="true" type="tns:GetWorkflowValidationDetailResponse" />
+  <xs:complexType name="PutWorkflowValidationActionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionXRefCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValidationId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PutWorkflowValidationActionRequest" nillable="true" type="tns:PutWorkflowValidationActionRequest" />
+  <xs:complexType name="PutWorkflowValidationActionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Dayforce.Services.Data" minOccurs="0" name="ResultCode" type="q4:PutWorkflowValidationActionResultType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PutWorkflowValidationActionResponse" nillable="true" type="tns:PutWorkflowValidationActionResponse" />
+  <xs:complexType name="VersionUpdateFileRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CurrentVersion" nillable="true" type="q5:Version" />
+          <xs:element minOccurs="0" name="ShouldReturnFile" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VersionUpdateFileRequest" nillable="true" type="tns:VersionUpdateFileRequest" />
+  <xs:complexType name="VersionUpdateFile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InstallationFile" nillable="true" type="xs:base64Binary" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="MandatoryMinimalVersion" nillable="true" type="q6:Version" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Version" nillable="true" type="q7:Version" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VersionUpdateFile" nillable="true" type="tns:VersionUpdateFile" />
+  <xs:complexType name="DFNotificationDataRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NotificationDataIds" nillable="true" type="q8:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFNotificationDataRequest" nillable="true" type="tns:DFNotificationDataRequest" />
+  <xs:complexType name="DFNotificationData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:DFResponseList" />
+          <xs:element minOccurs="0" name="NotificationDataId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFNotificationData" nillable="true" type="tns:DFNotificationData" />
+  <xs:complexType name="DFResponseList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ArrayOfDFObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFResponseList" nillable="true" type="tns:DFResponseList" />
+  <xs:complexType name="ArrayOfDFObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DFObject" nillable="true" type="tns:DFObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDFObject" nillable="true" type="tns:ArrayOfDFObject" />
+  <xs:complexType name="DFNotificationEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContextData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationDataId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFNotificationEvent" nillable="true" type="tns:DFNotificationEvent" />
+  <xs:complexType name="DFNotificationAck">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NotificationDataId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFNotificationAck" nillable="true" type="tns:DFNotificationAck" />
+  <xs:complexType name="DFNotificationsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubscriberReferenceCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFNotificationsRequest" nillable="true" type="tns:DFNotificationsRequest" />
+  <xs:complexType name="DFAckNotificationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NotificationDataId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFAckNotificationRequest" nillable="true" type="tns:DFAckNotificationRequest" />
+  <xs:complexType name="DFAckNotificationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFAckNotificationResponse" nillable="true" type="tns:DFAckNotificationResponse" />
+  <xs:complexType name="DFInsertResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InsertedCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFInsertResponse" nillable="true" type="tns:DFInsertResponse" />
+  <xs:complexType name="DFUpdateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UpdatedCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFUpdateResponse" nillable="true" type="tns:DFUpdateResponse" />
+  <xs:complexType name="DFDeleteResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeletedCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFDeleteResponse" nillable="true" type="tns:DFDeleteResponse" />
+  <xs:complexType name="DFResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DFResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="tns:DFObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DFResponse" nillable="true" type="tns:DFResponse" />
+</xs:schema>

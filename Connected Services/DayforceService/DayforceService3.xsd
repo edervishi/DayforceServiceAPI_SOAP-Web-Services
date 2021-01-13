@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Dayforce/Services/DayforceService" elementFormDefault="qualified" targetNamespace="http://Dayforce/Services/DayforceService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://www.dayforcehcm.com/DataSvc/DayforceService.svc?xsd=xsd2" namespace="http://Dayforce/Services/Data" />
+  <xs:element name="GetClientSiteUri">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientSiteUriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://Dayforce/Services/Data" minOccurs="0" name="GetClientSiteUriResult" nillable="true" type="q1:DFGetClientSiteUriResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Authenticate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://Dayforce/Services/Data" minOccurs="0" name="AuthenticateResult" nillable="true" type="q2:DFAuthenticateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTicket" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTicket" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://Dayforce/Services/Data" minOccurs="0" name="entity" nillable="true" type="q3:DFObject" />
+        <xs:element minOccurs="0" name="updateIfExists" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://Dayforce/Services/Data" minOccurs="0" name="InsertResult" nillable="true" type="q4:DFInsertResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTicket" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://Dayforce/Services/Data" minOccurs="0" name="entity" nillable="true" type="q5:DFObject" />
+        <xs:element minOccurs="0" name="insertIfMissing" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://Dayforce/Services/Data" minOccurs="0" name="UpdateResult" nillable="true" type="q6:DFUpdateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTicket" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://Dayforce/Services/Data" minOccurs="0" name="entity" nillable="true" type="q7:DFObject" />
+        <xs:element minOccurs="0" name="failIfMissing" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://Dayforce/Services/Data" minOccurs="0" name="DeleteResult" nillable="true" type="q8:DFDeleteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Query">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTicket" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://Dayforce/Services/Data" minOccurs="0" name="request" nillable="true" type="q9:DFRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://Dayforce/Services/Data" minOccurs="0" name="QueryResult" nillable="true" type="q10:DFResponseList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Execute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTicket" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://Dayforce/Services/Data" minOccurs="0" name="request" nillable="true" type="q11:DFRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://Dayforce/Services/Data" minOccurs="0" name="ExecuteResult" nillable="true" type="q12:DFResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
